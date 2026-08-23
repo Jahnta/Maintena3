@@ -6,6 +6,7 @@
       <trusted-artifacts>
          <trust file=".*-sources[.]jar" regex="true" reason="Sources are downloaded by IDE tooling and are not shipped in the application"/>
          <trust file=".*-javadoc[.]jar" regex="true" reason="Javadocs are downloaded by IDE tooling and are not shipped in the application"/>
+         <trust file=".*-src[.]zip" regex="true" reason="Gradle source distributions are downloaded by IDE tooling and are not shipped in the application"/>
       </trusted-artifacts>
    </configuration>
    <components>
