@@ -1,43 +1,9 @@
-# Maintena3 repository instructions
+# Maintena3
 
-## Scope and layout
-
-This directory is the Git root of the Maintena3 monorepo:
-
-- `maintena-android/` — Android client.
-- `maintena-server/` — Kotlin/Ktor server.
-
-Keep one Git history at the repository root. Do not create nested `.git` directories.
-
-## Working rules
-
-- Use the Gradle wrapper from the project being changed (`.\gradlew.bat` on Windows).
-- Treat Gradle build files and version catalogs as the source of truth; do not edit generated `.idea`, `.gradle`, `build`, or `.kotlin` state.
-- Keep `local.properties`, credentials, signing keys, service-account files, and other machine-specific data out of Git.
-- When an API contract changes, check both the server and Android client and update tests or documentation as appropriate.
-- Preserve the existing Java/Kotlin toolchain choices unless a change is intentional and verified.
-- Keep text files normalized to LF according to `.gitattributes`; do not disable the repository’s line-ending policy to hide a diff.
-
-## Common commands
-
-Run commands from the relevant subproject:
-
-```powershell
-Set-Location maintena-android
-.\gradlew.bat testDebugUnitTest
-.\gradlew.bat assembleDebug
-
-Set-Location ..\maintena-server
-.\gradlew.bat test
-.\gradlew.bat build
-```
-
-`maintena-server` can be started with `.\gradlew.bat run`; it is a long-running process and should not be used as the default verification command.
-
-## Verification and completion
-
-- Run the narrowest relevant tests first, then the affected project build when practical.
-- For cross-project changes, verify both projects.
-- Inspect `git diff --check` and `git status` before committing.
-- Do not commit generated build output or IDE metadata.
-- Report commands that were not run and any environment limitation that affected verification.
+- This is the Git root for `maintena-android` and `maintena-server`; never create nested repositories.
+- Work from the affected subproject and use its Gradle wrapper. Build files and version catalogs are authoritative; do not edit generated `.idea`, `.gradle`, `build`, or `.kotlin` state.
+- Never commit machine-local files or secrets, including `local.properties`, credentials, signing keys, and service-account files.
+- API-contract changes must update and verify both projects. Otherwise, run the narrowest relevant test, then the affected build when practical.
+- Preserve configured Java/Kotlin toolchains unless changing them intentionally.
+- Before finishing, run `git diff --check` and `git status`; report skipped checks or environment limits.
+- When a change alters project layout, toolchains, canonical checks, or these invariants, update the nearest `AGENTS.md` in the same change. Keep guidance durable and do not repeat parent rules.
