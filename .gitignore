@@ -1,0 +1,40 @@
+# Operating-system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDE metadata and local project state
+**/.idea/
+*.iml
+*.ipr
+*.iws
+
+# Gradle and build output
+**/.gradle/
+**/build/
+**/out/
+
+# Kotlin/Android generated state
+**/.kotlin/
+**/.externalNativeBuild/
+**/.cxx/
+**/captures/
+**/local.properties
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+**/*.jks
+**/*.keystore
+**/*.p12
+**/google-services.json
+
+# Coverage and reports
+**/coverage/
+**/reports/

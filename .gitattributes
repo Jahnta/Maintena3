@@ -1,0 +1,31 @@
+# Keep repository text normalized and independent of Windows checkout defaults.
+* text=auto eol=lf
+
+# Windows command files should retain Windows line endings.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Shell scripts and source/config files use LF everywhere.
+*.sh text eol=lf
+*.gradle text eol=lf
+*.gradle.kts text eol=lf
+*.kts text eol=lf
+*.kt text eol=lf
+*.java text eol=lf
+*.xml text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.properties text eol=lf
+*.toml text eol=lf
+*.md text eol=lf
+
+# Binary artifacts.
+*.jar binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+
