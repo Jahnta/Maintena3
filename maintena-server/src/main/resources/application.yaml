@@ -3,4 +3,11 @@ ktor:
     port: 8080
   application:
     modules:
-      - com.db.RoutingKt.configureRouting
+      - com.example.ApplicationKt.module
+
+database:
+  host: ${?DB_HOST}
+  port: ${?DB_PORT}
+  name: ${?DB_NAME}
+  user: ${?DB_USER}
+  password: ${?DB_PASSWORD}

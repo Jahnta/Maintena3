@@ -1,4 +1,4 @@
-package com.db
+package com.example
 
 import io.ktor.client.request.get
 import io.ktor.http.HttpStatusCode
@@ -8,11 +8,15 @@ import kotlin.test.*
 class ServerTest {
 
     @Test
-    fun `test root endpoint`() = testApplication {
-        // loads default configuration
-        configure()
-        // verify server root returns 200
-        assertEquals(HttpStatusCode.OK, client.get("/").status)
+    fun `health endpoint responds ok`() = testApplication {
+        application {
+            configureHttp()
+            configureRouting()
+        }
+
+        val response = client.get("/health")
+
+        assertEquals(HttpStatusCode.OK, response.status)
     }
 
 }
