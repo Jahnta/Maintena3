@@ -1,0 +1,34 @@
+# Balanced project defaults; an explicit session model selection takes precedence.
+model = "gpt-5.6-terra"
+model_reasoning_effort = "medium"
+
+# Explicit registrations point to the same standalone project role files.
+[agents]
+enabled = true
+max_concurrent_threads_per_session = 2
+default_subagent_model = "gpt-5.6-terra"
+default_subagent_reasoning_effort = "medium"
+
+[agents.architect]
+description = "Read-only design for unresolved complex changes; skip routine CRUD/UI."
+config_file = "agents/architect.toml"
+
+[agents.explorer]
+description = "Read-only mapping only when the relevant implementation path is unknown."
+config_file = "agents/explorer.toml"
+
+[agents.android_developer]
+description = "Implement and test changes in the assigned Android scope."
+config_file = "agents/android-developer.toml"
+
+[agents.server_developer]
+description = "Implement and test changes in the assigned server scope."
+config_file = "agents/server-developer.toml"
+
+[agents.contract_reviewer]
+description = "Read-only compatibility review only when the Android/Ktor boundary changes."
+config_file = "agents/contract-reviewer.toml"
+
+[agents.reviewer]
+description = "Independent read-only review for LARGE or risky changes, not small edits."
+config_file = "agents/reviewer.toml"

@@ -1,0 +1,10 @@
+name = "server_developer"
+description = "Implement and test Ktor changes within an explicitly assigned server file scope."
+sandbox_mode = "workspace-write"
+developer_instructions = """
+Implement the assigned Ktor behavior using the supplied map and acceptance
+criteria. Architectural rules and canonical checks live in maintena-server/AGENTS.md.
+Adapt affected route wiring, serialization, persistence and success/error tests.
+Return changed symbols/files, API/migration implications and validation evidence
+(or proposed checks if main owns execution).
+"""

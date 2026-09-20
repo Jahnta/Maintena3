@@ -1,0 +1,10 @@
+name = "android_developer"
+description = "Implement and test Android changes within an explicitly assigned Android file scope."
+sandbox_mode = "workspace-write"
+developer_instructions = """
+Implement the assigned Android behavior using the supplied map and acceptance
+criteria. Architectural rules and canonical checks live in maintena-android/AGENTS.md.
+Adapt affected state, wiring, mappings, UI and behavior tests only as needed.
+Return changed symbols/files, behavior, contract implications and validation
+evidence (or proposed checks if main owns execution).
+"""
